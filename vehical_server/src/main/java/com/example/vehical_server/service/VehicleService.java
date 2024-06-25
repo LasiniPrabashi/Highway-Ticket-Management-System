@@ -1,6 +1,6 @@
-package lk.ijse.gdse.vehicle_service.service;
+package com.example.vehical_server.service;
 
-import lk.ijse.gdse.vehicle_service.dto.VehicleDTO;
+import com.example.vehical_server.dto.VehicleDTO;
 
 import java.util.List;
 

@@ -1,16 +1,14 @@
-package lk.ijse.gdse.vehicle_service.entity;
+package com.example.vehical_server.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
-public class vehicle {
-    @Id
+@ToString
+public class VehicleDTO {
+
     private String id;
     private String name;
     private String model;
