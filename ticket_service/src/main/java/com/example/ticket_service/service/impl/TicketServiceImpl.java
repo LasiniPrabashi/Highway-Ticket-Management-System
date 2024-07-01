@@ -15,7 +15,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class ServiceImpl  implements TicketService {
+public class TicketServiceImpl implements TicketService {
 
     @Autowired
     private TicketRepo repo;

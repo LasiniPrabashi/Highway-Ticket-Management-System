@@ -20,17 +20,16 @@ public class paymentController {
 
     @GetMapping
     public List<paymentDTO> getAllPayment() {
-        return service.getAllPayments();
+        return service.getAllPayment();
     }
 
     @PostMapping
-    public void savePayment(@RequestBody paymentDTO dto) {
-        service.savePayment(dto);
+    public paymentDTO savePayment(@RequestBody paymentDTO dto){
+        return service.savePayment(dto);
     }
 
-    @PatchMapping
-    public void updatePayment( @RequestBody paymentDTO paymentDTO){
-        service.updatePayment(paymentDTO);
+    @PutMapping
+    public paymentDTO updateTicket(@RequestBody paymentDTO dto){
+        return service.updatePayment(dto);
     }
-
 }
