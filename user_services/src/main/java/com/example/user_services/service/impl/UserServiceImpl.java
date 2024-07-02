@@ -9,6 +9,8 @@ import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,7 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private ModelMapper mapper;
+
 
     @Override
     public UserDTO saveUser(UserDTO dto) {
@@ -43,5 +46,11 @@ public class UserServiceImpl implements UserService {
     public List<UserDTO> getAllUser() {
         return mapper.map(repo.findAll(), new TypeToken<ArrayList<UserDTO>>() {
         }.getType()); }
+
+    @Override
+    public UserDTO findUserById(String id) {
+        User user = repo.findById(id).orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+        return mapper.map(user,UserDTO.class);
+    }
 
 }

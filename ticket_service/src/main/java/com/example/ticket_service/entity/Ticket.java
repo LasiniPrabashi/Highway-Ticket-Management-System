@@ -15,7 +15,9 @@ import lombok.Setter;
 public class Ticket {
     @Id
     private String id;
+    private String userId;
     private String vehicleId;
-    private String date;
-    private String time;
+    private String entrance;
+    private String exits;
+    private double price;
 }

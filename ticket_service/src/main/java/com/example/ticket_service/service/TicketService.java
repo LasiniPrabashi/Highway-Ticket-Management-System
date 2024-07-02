@@ -6,7 +6,8 @@ import java.util.List;
 
 public interface TicketService {
 
-    TicketDTO saveTicket(TicketDTO dto);
-    TicketDTO updateTicket(TicketDTO dto);
+    TicketDTO saveTicket(TicketDTO ticketDTO);
+    TicketDTO updateTicket(TicketDTO ticketDTO);
     List<TicketDTO> getAllTicket();
+    void deleteTicket(String id);
 }

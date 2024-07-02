@@ -15,18 +15,25 @@ public class TicketController {
     private TicketService ticketService;
 
     @GetMapping
-    public List<TicketDTO> getAllTicket() {
+    public List<TicketDTO> getAllTicket(){
         return ticketService.getAllTicket();
     }
 
     @PostMapping
     public TicketDTO saveTicket(@RequestBody TicketDTO dto){
+        System.out.println("saveTicket");
         return ticketService.saveTicket(dto);
     }
 
     @PutMapping
     public TicketDTO updateTicket(@RequestBody TicketDTO dto){
+        System.out.println("updateTicket");
         return ticketService.updateTicket(dto);
     }
 
+    @DeleteMapping
+    public void deleteTicket(String id){
+        System.out.println("deleteTicket");
+        ticketService.deleteTicket(id);
+    }
 }
