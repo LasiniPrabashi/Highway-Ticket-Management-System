@@ -18,7 +18,7 @@ public class VehicleController {
 
 
     @GetMapping
-    public List<VehicleDTO> getAllVehicle(){
+    public List<VehicleDTO> getAllVehicle() {
         return service.getAllVehicle();
     }
 
